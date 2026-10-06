@@ -16,7 +16,7 @@
 | Version / date | `P7-2026-10-07` / `2026-10-07` (UTC+8) |
 | Code | [uukuguy/asterion](https://github.com/uukuguy/asterion) |
 | Scorecard | [60c10b53-9b8d-4af9-aae7-85f81543198a](https://arcprize.org/scorecards/60c10b53-9b8d-4af9-aae7-85f81543198a) |
-| Cost | Not reported; see accounting scope below |
+| Cost | Actual total unreported; scoped API-equivalent estimate $147.46–$158.32 under the assumptions below |
 
 The YAML records all required fields, the author's public profiles, a software
 citation, and the exact research model. The ARC-AGI-3 score is supplied through
@@ -82,8 +82,12 @@ must not be added together:
 
 The run-ID-date inventory includes successful, failed and restoration attempts,
 across multiple local subcampaigns. It excludes October 5 and earlier runs,
-and does not include the supervising coding agent's development usage. Its boundary uses run IDs, not independently verified wall-clock timestamps. It is
+and does not include the supervising coding agent's development usage.
+Its boundary uses run IDs, not independently verified wall-clock timestamps. It is
 a dated research subtotal, not a verified total for the entire study.
+The producing runtime used Pi's `openai-codex` provider with `gpt-6.1-sol`;
+public API prices below are an accounting reference, not evidence of
+per-token charges paid through that access method.
 All 228 trace hash chains were checked; eight are unsealed, so interrupted
 requests without a reported usage event may be absent from the subtotal.
 

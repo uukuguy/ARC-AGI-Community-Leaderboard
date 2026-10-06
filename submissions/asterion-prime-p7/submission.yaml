@@ -31,4 +31,4 @@ versions:
       - benchmark: "arc-agi-3"
         scorecard_url: "https://arcprize.org/scorecards/60c10b53-9b8d-4af9-aae7-85f81543198a"
         set: "public"
-        # Cost is omitted: cumulative research USD spend has not been audited.
+        # Actual total cost is unknown; see README for scoped API-equivalent estimates and cache assumptions.
