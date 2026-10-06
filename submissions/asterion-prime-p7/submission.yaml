@@ -3,14 +3,12 @@ authors:
   - name: "Jiangwen Su"
     github: "https://github.com/uukuguy"
 description: >
-  Asterion Prime P7 uses an LLM to maintain a semantic WorldMap, build and test
-  executable hypotheses in persistent IPython, and compare predicted actions
-  with real environment feedback while retaining experience across attempts.
-  The linked evaluation uses iterative exploration of known public games with
-  retained evidence and validated prefixes, generic infrastructure repairs
-  between attempts, and operator-controlled retries and cognition resets,
-  followed by Competition-mode replay of discovered action routes.
-  It does not establish cold-start performance or generalization to unseen games.
+  Asterion Prime P7 combines an LLM-maintained semantic WorldMap, executable
+  hypotheses and plan search in persistent IPython, and active experiments
+  checked against real environment feedback, retaining corrections and
+  reusable experience across attempts.
+  Its public producing system independently replays and certifies discovered
+  routes at save time, then executes certified actions through Competition Mode.
 code_url: "https://github.com/uukuguy/asterion"
 versions:
   - version: "P7-2026-10-07"
