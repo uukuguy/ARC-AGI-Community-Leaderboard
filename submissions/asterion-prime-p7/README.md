@@ -1,6 +1,29 @@
 # Asterion Prime P7
 
-[System source](https://github.com/uukuguy/asterion) · [Reproduction guide](https://github.com/uukuguy/asterion/blob/main/docs/guides/prime-p7-community-reproduction.md) · [Result record](https://github.com/uukuguy/asterion/blob/main/docs/results/arc-agi-3/README.md) · [Competition scorecard](https://arcprize.org/scorecards/60c10b53-9b8d-4af9-aae7-85f81543198a)
+[Replay console](https://asterion-p7-console.vercel.app) · [System source](https://github.com/uukuguy/asterion) · [Reproduction guide](https://github.com/uukuguy/asterion/blob/main/docs/guides/prime-p7-community-reproduction.md) · [Result record](https://github.com/uukuguy/asterion/blob/main/docs/results/arc-agi-3/README.md) · [Competition scorecard](https://arcprize.org/scorecards/60c10b53-9b8d-4af9-aae7-85f81543198a)
+
+## Submission details
+
+| Field | Value |
+|---|---|
+| Name | Asterion Prime P7 |
+| Author | [Jiangwen Su](https://github.com/uukuguy) · [Hugging Face](https://huggingface.co/uukuguy) |
+| Benchmark / set | ARC-AGI-3 · public |
+| Competition score | **100.00** — normally closed official scorecard |
+| Completion | **25/25 games · 183/183 levels** |
+| Online actions | **6,781** |
+| Model / seed | `gpt-6.1-sol` / `0` |
+| Version / date | `P7-2026-10-07` / `2026-10-07` (UTC+8) |
+| Code | [uukuguy/asterion](https://github.com/uukuguy/asterion) |
+| Scorecard | [60c10b53-9b8d-4af9-aae7-85f81543198a](https://arcprize.org/scorecards/60c10b53-9b8d-4af9-aae7-85f81543198a) |
+| Cost | Not reported; see accounting scope below |
+
+The YAML records all required fields, the author's public profiles, a software
+citation, and the exact research model. The ARC-AGI-3 score is supplied through
+the scorecard URL. The method and result links above point to the public
+producing system and checked evidence.
+
+## Method
 
 Prime P7 is Asterion's ARC-AGI-3 application. Its general method connects
 language hypotheses, persistent program models, real counterexamples, and
@@ -36,6 +59,8 @@ SDK and checked for source identity and achieved progress. Certificates bind
 these checks to the saved actions and game assets; official submission reads
 this authority before dispatching real online actions.
 
+## Evaluation and accounting scope
+
 The linked record accumulated iterative research on public games, with retained
 same-game experience, validated prefix reuse, generic infrastructure repairs
 between attempts, and operator-controlled retries and selected cognition
@@ -45,6 +70,15 @@ without new model inference. The scorecard has normally closed with 25/25 games 
 completed in 6781 actions; its final server score and every selected route
 were checked against the closed receipt. The YAML supplies the
 scorecard link without a numeric score or an estimated cost.
+
+P7 records input/output token usage, but the inspected accounting surface does
+not establish cumulative USD spend or the cache/pricing detail needed to
+calculate it. The last online route execution made no new model calls; that
+does not measure the preceding research cost. The optional YAML `cost` field
+is therefore omitted. No accompanying paper or project social-post URL is supplied in this entry;
+the repository documentation and software citation describe the work.
+
+## Reproduction
 
 Reproduction of the system requires the external ARC SDK/game assets, a
 configured Pi/backend profile for live research, and Competition credentials
