@@ -7,8 +7,9 @@ description: >
   executable hypotheses in persistent IPython, and compare predicted actions
   with real environment feedback while retaining experience across attempts.
   The linked evaluation uses iterative exploration of known public games with
-  retained evidence and validated prefixes, followed by Competition-mode
-  replay of discovered action routes.
+  retained evidence and validated prefixes, generic infrastructure repairs
+  between attempts, and operator-controlled retries and cognition resets,
+  followed by Competition-mode replay of discovered action routes.
   It does not establish cold-start performance or generalization to unseen games.
 code_url: "https://github.com/uukuguy/asterion"
 versions:

@@ -15,11 +15,21 @@ earlier same-game observations, hypotheses, and experience. Candidate routes
 were independently replayed against the local SDK and checked for source
 identity and achieved progress before becoming saved submission inputs.
 
+The campaign also included generic infrastructure repairs between attempts
+and operator-controlled retry scheduling and cognition resets. The LLM research
+process generated the WorldMaps, executable models, and discovered routes;
+operator scheduling and software development were separate interventions.
+A selected cognition reset quarantines retained same-game reasoning, while
+an already validated action prefix may still be restored. That reset does not
+make the overall campaign a cold-start evaluation.
+
 The final Competition submission executes these previously discovered native
 action routes online. That saved-route submission path performs no new model
 inference. Its scorecard validates execution through the Competition service;
 the full research process precedes that replay. This evaluation does not establish
 cold-start solving, held-out generalization, or ARC Prize Verified status.
+There is no evidence here that one fixed final software version, starting with
+empty experience, independently achieved the campaign's result.
 The YAML supplies the scorecard link without a numeric score or an estimated
 cost.
 
