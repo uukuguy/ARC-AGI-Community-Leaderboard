@@ -1,0 +1,23 @@
+name: "Asterion Prime P7"
+authors:
+  - name: "Jiangwen Su"
+    github: "https://github.com/uukuguy"
+description: >
+  Asterion Prime P7 uses an LLM to maintain a semantic WorldMap, build and test
+  executable hypotheses in persistent IPython, and compare predicted actions
+  with real environment feedback while retaining experience across attempts.
+  The linked evaluation uses iterative exploration of known public games with
+  retained evidence and validated prefixes, followed by Competition-mode
+  replay of discovered action routes.
+  It does not establish cold-start performance or generalization to unseen games.
+code_url: "https://github.com/uukuguy/asterion"
+versions:
+  - version: "P7-2026-10-07"
+    date: "2026-10-07"
+    changes: "Public iterative exploration and certified-route Competition replay."
+    models:
+      - name: "gpt-6.1-sol"
+    scores:
+      - benchmark: "arc-agi-3"
+        scorecard_url: "https://arcprize.org/scorecards/60c10b53-9b8d-4af9-aae7-85f81543198a"
+        set: "public"
