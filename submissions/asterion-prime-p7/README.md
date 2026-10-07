@@ -1,121 +1,75 @@
 # Asterion Prime P7
 
-[Replay console](https://asterion-p7-console.vercel.app) · [System source](https://github.com/uukuguy/asterion) · [Reproduction guide](https://github.com/uukuguy/asterion/blob/main/docs/guides/prime-p7-community-reproduction.md) · [Result record](https://github.com/uukuguy/asterion/blob/main/docs/results/arc-agi-3/README.md) · [Competition scorecard](https://arcprize.org/scorecards/60c10b53-9b8d-4af9-aae7-85f81543198a)
+Asterion Prime P7 completed **25/25 public ARC-AGI-3 games and 183/183 levels in 6,781 actions**, with **100.00** on a closed official Competition scorecard. The routes were discovered through iterative LLM research with retained experience, then replayed online. [Code and write-up](https://github.com/uukuguy/asterion/blob/bb005c5bfb8406e7fc3c6f97d59138e90ace691f/README.md) · [Result and accounting](https://github.com/uukuguy/asterion/blob/bb005c5bfb8406e7fc3c6f97d59138e90ace691f/docs/results/arc-agi-3/README.md) · [Replay console](https://asterion-p7-console.vercel.app).
 
-## Submission details
+[![Official ARC-AGI-3 score overview and all 25 game results: 100.00, 183 levels, 6,781 actions](https://raw.githubusercontent.com/uukuguy/asterion/bb005c5bfb8406e7fc3c6f97d59138e90ace691f/docs/assets/arc-agi-3/p7-official-scorecard.png)](https://arcprize.org/scorecards/60c10b53-9b8d-4af9-aae7-85f81543198a)
 
-| Field | Value |
-|---|---|
-| Name | Asterion Prime P7 |
-| Author | [Jiangwen Su](https://github.com/uukuguy) · [Hugging Face](https://huggingface.co/uukuguy) |
-| Benchmark / set | ARC-AGI-3 · public |
-| Competition score | **100.00** — normally closed official scorecard |
-| Completion | **25/25 games · 183/183 levels** |
-| Online actions | **6,781** |
-| Model / seed | `gpt-6.1-sol` / `0` |
-| Version / date | `P7-2026-10-07` / `2026-10-07` (UTC+8) |
-| Code | [uukuguy/asterion](https://github.com/uukuguy/asterion) |
-| Scorecard | [60c10b53-9b8d-4af9-aae7-85f81543198a](https://arcprize.org/scorecards/60c10b53-9b8d-4af9-aae7-85f81543198a) |
-| Cost | Actual total unreported; scoped API-equivalent estimate $147.46–$158.32 under the assumptions below |
+Official overview and all 25 game results. [Full-page screenshot](https://raw.githubusercontent.com/uukuguy/asterion/bb005c5bfb8406e7fc3c6f97d59138e90ace691f/docs/assets/arc-agi-3/p7-official-scorecard-full.png).
 
-The YAML records all required fields, the author's public profiles, a software
-citation, and the exact research model. The ARC-AGI-3 score is supplied through
-the scorecard URL. The method and result links above point to the public
-producing system and checked evidence.
+P7's contribution is its combination of an LLM-maintained **WorldMap**, persistent IPython hypotheses and search programs, checked short action plans, and selective reuse of experience from successful and failed attempts. The WorldMap records candidate rules, action meanings, goals, unknowns, competing hypotheses, and supporting evidence. The LLM uses it to choose computations or discriminating experiments, writes and revises executable models, and compares their predictions with recorded observations and real action outcomes. The general machinery learns from observations; game-specific programs and saved routes are research outputs rather than supplied answer tables.
 
-## Method
+The current registered tools are exactly **`ipython`, `p7_workspace`, and `p7_execute_plan`**. Plans bind predictions to the current observation and workspace revision; the broker executes sequentially and stops on mismatch, level boundary, RESET, or termination. Counterexamples guide revision. Later attempts can reuse recorded corrections, artifacts, and program cells, while an independently checked successful prefix can be restored in a new local game. RESET preserves durable experience but clears pending planner authority. Producing code: [prompt](https://github.com/uukuguy/asterion/blob/bb005c5bfb8406e7fc3c6f97d59138e90ace691f/src/asterion/applications/prime/p7/prompt.py), [tool registry](https://github.com/uukuguy/asterion/blob/bb005c5bfb8406e7fc3c6f97d59138e90ace691f/src/asterion/applications/prime/p7/tool_registry.py), [workspace](https://github.com/uukuguy/asterion/blob/bb005c5bfb8406e7fc3c6f97d59138e90ace691f/src/asterion/applications/prime/p7/research.py), [broker](https://github.com/uukuguy/asterion/blob/bb005c5bfb8406e7fc3c6f97d59138e90ace691f/src/asterion/applications/prime/p7/broker.py), [experience](https://github.com/uukuguy/asterion/blob/bb005c5bfb8406e7fc3c6f97d59138e90ace691f/src/asterion/applications/prime/p7/experience.py), and [certificates](https://github.com/uukuguy/asterion/blob/bb005c5bfb8406e7fc3c6f97d59138e90ace691f/src/asterion/applications/prime/p7/solution_certificates.py).
 
-Prime P7 is Asterion's ARC-AGI-3 application. Its general method connects
-language hypotheses, persistent program models, real counterexamples, and
-cross-attempt experience in a versioned research loop. The public repository
-includes the producing workspace, tool bridge, controlled action broker, and
-evidence validation code.
+## Version
 
-P7 turns observations into a revisable WorldMap of candidate rules, action
-meanings, goals, competing hypotheses, and unresolved questions. The LLM uses
-this map to choose a useful computation or discriminating experiment; it can
-act with a partial model before every rule is settled.
+- **[P7-2026-10-07](https://github.com/uukuguy/asterion/tree/P7-2026-10-07)** (2026-10-07, UTC+8): `gpt-6.1-sol`, Pi `openai-codex`, seed `0`. Official **100.00**, 25/25 games, 183/183 levels, 6,781 actions. **Estimated $158.32** API-price equivalent for a partial recorded research subtotal; actual complete cost is unknown. [Scorecard](https://arcprize.org/scorecards/60c10b53-9b8d-4af9-aae7-85f81543198a). The final runtime was [`2f258ff3`](https://github.com/uukuguy/asterion/tree/2f258ff3e74478805f63e08daa437acf9ca53a21); routes came from successive software revisions and retain their original identities and certificates.
 
-In persistent IPython, the LLM writes state projections, transition and goal
-candidates, and search programs—for example, `project(frame)`,
-`step(state, action)`, `goal(state)`, and `search(state)`. These are programs
-created during research, not a supplied table of game answers. It compares
-alternative explanations and routes using its own models.
+By [Jiangwen Su](https://github.com/uukuguy) ([Hugging Face](https://huggingface.co/uukuguy)). [Software citation](submission.yaml).
 
-The LLM tests predictions against recorded observations and submits short
-plans with explicit expected outcomes. Host-side checks return matches or
-concrete expected/actual counterexamples. When reality contradicts a
-prediction, the LLM revises its WorldMap or program and recomputes the next
-plan. The host checks evidence; the LLM interprets and revises the hypotheses.
+## How the scorecard was produced
 
-Later attempts selectively reuse earlier WorldMaps, corrections, unknowns,
-counterexamples, artifacts, and program cells—including material from failed
-attempts. The LLM revises and reruns useful programs against current evidence.
-This research reuse is distinct from restoring an independently checked
-successful action prefix in a new local game.
+The public-game campaign was **warm-start iterative research**, with same-game experience accumulation, failed attempts, retries, verified prefix reuse, operator scheduling, selected cognition resets, and generic application/infrastructure repairs between attempts. It was not one empty-history, fixed-version, unattended run. The LLM generated game hypotheses, WorldMaps, programs, and candidate routes.
 
-At save time, candidate routes are independently replayed against the local
-SDK and checked for source identity and achieved progress. Certificates bind
-these checks to the saved actions and game assets; official submission reads
-this authority before dispatching real online actions.
+Save-time SDK replay checked progress and source/game identities and certified the selected routes. Official submission then executed those actions in new online Competition games **without model inference**. The scorecard normally closed, and its receipt was checked against every selected route. The 6,781 actions cover selected online routes, not earlier exploration; a Competition RESET itself counts as an action and does not discard preceding actions. [Per-game and per-level counts, runtime provenance, and usage scope](https://github.com/uukuguy/asterion/blob/bb005c5bfb8406e7fc3c6f97d59138e90ace691f/docs/results/arc-agi-3/p7-public-2026-10-07.json).
 
-## Evaluation and accounting scope
+This result concerns the 25 public games. It does not demonstrate fresh-model unseen-game performance or a private-set result. A source checkout includes the producing system but not the operator's private historical attempt records or certified roster. The read-only console shows local saved progress and replay; synchronization may lag research.
 
-The linked record accumulated iterative research on public games, with retained
-same-game experience, validated prefix reuse, generic infrastructure repairs
-between attempts, and operator-controlled retries and selected cognition
-resets. P7's LLM research produced the WorldMaps, programs, and discovered
-routes. The Competition submission reexecutes the certified routes online
-without new model inference. The scorecard has normally closed with 25/25 games and 183/183 levels
-completed in 6781 actions; its final server score and every selected route
-were checked against the closed receipt. The YAML supplies the
-scorecard link without a numeric score or an estimated cost.
+## Run the producing system
 
-A token-based API-equivalent estimate is possible, with the scope and cache
-assumptions stated explicitly. The following two inventories overlap; they
-must not be added together:
+Use the [pinned reproduction guide](https://github.com/uukuguy/asterion/blob/bb005c5bfb8406e7fc3c6f97d59138e90ace691f/docs/guides/prime-p7-community-reproduction.md) with the published `P7-2026-10-07` tag (source/documentation commit `bb005c5b`). Framework inspection needs Python 3.10+ and `uv`, without model credentials:
 
-| Recorded scope | Runs | Input tokens, including cache | Output tokens |
-|---|---:|---:|---:|
-| Direct sources selected for the final 25 routes | 25 | 65,878,471 | 301,489 |
-| All local P7 runs with IDs starting `p7-live-20261006` | 228 | 723,793,948 | 3,382,772 |
+```bash
+git clone https://github.com/uukuguy/asterion.git
+cd asterion
+git checkout P7-2026-10-07
+uv sync --frozen
+uv run asterion list
+uv run asterion describe --provider dci-agent-lite
+```
 
-The run-ID-date inventory includes successful, failed and restoration attempts,
-across multiple local subcampaigns. It excludes October 5 and earlier runs,
-and does not include the supervising coding agent's development usage.
-Its boundary uses run IDs, not independently verified wall-clock timestamps. It is
-a dated research subtotal, not a verified total for the entire study.
-The producing runtime used Pi's `openai-codex` provider with `gpt-6.1-sol`;
-public API prices below are an accounting reference, not evidence of
-per-token charges paid through that access method.
-All 228 trace hash chains were checked; eight are unsealed, so interrupted
-requests without a reported usage event may be absent from the subtotal.
+Live research needs separately prepared Pi/authenticated backend access, external ARC assets and SDK wheels (`arc_agi` 0.9.9 / `arcengine` 0.9.3), and private operator credentials. Current Make launchers target macOS/OrbStack with a systemd/cgroups Linux guest, guest Python 3.11+, and Node 22/npm with the resolver's offline package cache. Set `ASTERION_PRIME_PROVIDER=openai-codex` and `ASTERION_PRIME_MODEL=gpt-6.1-sol` explicitly; prepare `ARC_API_KEY` privately. The guide specifies resource-root/Pi-profile/guest overrides and bootstrap gaps; `make setup` alone does not finish P7 setup.
 
-At the [GPT-6.1 Sol published rates](https://developers.openai.com/api/docs/models/gpt-6.1-sol)
-checked on 2026-10-07, Standard prices per million tokens are $2.00 for
-uncached input, $0.10 for cache reads, $2.50 for cache writes and $10.00 for
-output. No recorded request exceeded the 272K input pricing threshold.
-Assuming 97% of input tokens are cache reads and the remaining 3% use the
-uncached-input rate, the 228-run subtotal is **$147.46**; treating that remaining
-3% as cache writes gives **$158.32**. These are conditional estimates, excluding
-regional premiums; Fast mode would double them. The traces retain combined
-input counters, not the cache breakdown, so 97% is an assumption rather than
-a measured hit rate. Each trace event is counted once; provider request IDs
-were not retained for cross-run deduplication. These figures are API-price
-equivalents, not a bill.
+After those prerequisites, synchronize the public catalog and run one bounded OFFLINE attempt:
 
-The last online route execution made no new model calls; its zero inference
-usage does not measure preceding research. The optional YAML `cost` field
-remains omitted while the complete research scope and actual cache/service
-categories are unresolved. No accompanying paper or project social-post URL
-is supplied in this entry; the documentation and software citation describe
-the work.
+```bash
+make asterion-prime-p7-sync-games
+make asterion-prime-p7-games
+make asterion-prime-p7-level-witness GAME=ls20 LEVEL=1
+make p7-controller
+```
 
-## Reproduction
+Catalog sync uses GETs without a scorecard or model. The witness calls the model and applies a fixed 900-second guest allowance, an action ceiling, and cleanup checks. `LEVEL=N` completes levels 1 through N in order. Check the attempt summary for actual progress and failure; timeout/cap exhaustion is not a pass. The local console opens at `http://127.0.0.1:57515/`. New operators build their own experience and certified routes; this example does not recreate the historical 100-score campaign.
 
-Reproduction of the system requires the external ARC SDK/game assets, a
-configured Pi/backend profile for live research, and Competition credentials
-for online submission. The source checkout alone does not include the operator's
-private run history or certified saved-route roster. Operators can run the
-public system and accumulate their own experience and certified routes using
-the reproduction guide.
+Once your own routes have valid certificates, explicitly choose online replay:
+
+```bash
+make asterion-prime-p7-official-preflight
+make asterion-prime-p7-official-submit GAME=ls20
+# Alternatively, for a separately chosen full-catalog submission:
+make asterion-prime-p7-official-submit GAME=all
+```
+
+Preflight opens no card and calls no model. Submission creates a new Competition card, executes saved actions online without a model, and stops on uncertainty. Missing/stale certification is rejected before card creation; `GAME=all` needs a complete certified roster with the exact model identity. Only a checked `closed-confirmed` receipt establishes the final score.
+
+## Usage and cost
+
+**Actual complete monetary cost is unknown.** These recorded scopes overlap; do not add them:
+
+| Recorded scope | Runs | Usage records | Input tokens, including cache | Output tokens |
+|---|---:|---:|---:|---:|
+| Sources selected for the final 25 routes | 25 | 618 | 65,878,471 | 301,489 |
+| Scoped persisted P7 research cohort | 228 | 6,885 | 723,793,948 | 3,382,772 |
+
+The 228-run subtotal uses a shared run-label prefix, not a uniform UTC+8 calendar day or full campaign ledger. All 228 hash chains validate: 220 sealed, 8 unsealed; 4 runs lack summaries and 1 has zero recorded usage. Interrupted requests may lack usage, and missing provider request IDs prevent proving cross-run deduplication.
+
+The submission reports **estimated `cost: 158.32` USD** for the 228-run recorded subtotal at [public Standard API rates](https://developers.openai.com/api/docs/models/gpt-6.1-sol) checked on 2026-10-07, **assuming 97% cached reads and 3% cache writes**. If the remaining 3% instead uses the uncached-input rate, the alternative estimate is **$147.46**; Fast at 2× gives **$294.93–$316.64**. Cache categories/service mode were not retained, so 97% is an assumption, not a measured cache-hit rate. These are API-price equivalents, not actual payment or proven cost bounds. Earlier P7 research, supervisor/development work, missing usage, regional premiums, tool fees, and account discounts are excluded. Official replay's zero model calls do not imply zero research cost. The reported field is this conditional estimate, not an actual bill or complete campaign cost; [detailed rates, assumptions and exact values](https://github.com/uukuguy/asterion/blob/bb005c5bfb8406e7fc3c6f97d59138e90ace691f/docs/results/arc-agi-3/README.md#scoped-api-price-estimate) are in Asterion's result record.

@@ -9,26 +9,26 @@ citation: |
     title = {Asterion Prime P7},
     year = {2026},
     version = {P7-2026-10-07},
-    url = {https://github.com/uukuguy/asterion}
+    url = {https://github.com/uukuguy/asterion/tree/P7-2026-10-07}
   }
 description: >
-  Asterion Prime P7 is a coding agent that uses an LLM-maintained WorldMap
-  to choose experiments and write state projections, transition and goal
-  candidates, and search programs in persistent IPython.
-  Historical predictions and real action outcomes expose counterexamples
-  that guide model revision and replanning.
-  It reuses corrections and programs from successful and failed attempts,
-  then independently validates and certifies discovered routes for
-  Competition Mode execution.
+  Asterion Prime P7 is a WorldMap-driven coding agent that builds and
+  revises executable game models in persistent IPython.
+  It tests hypotheses against recorded observations and checks short
+  action plans against real feedback.
+  Across attempts, it reuses learned corrections and useful programs,
+  then certifies discovered routes for Competition Mode replay.
 code_url: "https://github.com/uukuguy/asterion"
 versions:
   - version: "P7-2026-10-07"
     date: "2026-10-07"
-    changes: "WorldMap-driven research, persistent IPython, cross-attempt experience reuse, and completed 25-game Competition evaluation."
+    changes: "Initial submission: WorldMap-driven research, persistent IPython, cross-attempt experience reuse, and a completed 25-game Competition scorecard."
     models:
       - name: "gpt-6.1-sol"
     scores:
       - benchmark: "arc-agi-3"
         scorecard_url: "https://arcprize.org/scorecards/60c10b53-9b8d-4af9-aae7-85f81543198a"
         set: "public"
-        # Actual total cost is unknown; see README for scoped API-equivalent estimates and cache assumptions.
+        # Estimated API-price equivalent for 228 recorded P7 runs, not an actual bill.
+        # Assumes 97% cached reads and 3% cache writes at Standard rates; README gives scope and exclusions.
+        cost: 158.32
